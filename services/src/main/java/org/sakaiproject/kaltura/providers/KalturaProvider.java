@@ -17,6 +17,7 @@ import org.sakaiproject.entitybroker.entityprovider.extension.ActionReturn;
 import org.sakaiproject.entitybroker.entityprovider.extension.Formats;
 import org.sakaiproject.entitybroker.entityprovider.search.Search;
 import org.sakaiproject.entitybroker.util.AbstractEntityProvider;
+import org.sakaiproject.kaltura.Constants;
 import org.sakaiproject.kaltura.services.provider.AuthCodeProviderService;
 import org.sakaiproject.kaltura.services.provider.GitProviderService;
 import org.sakaiproject.kaltura.services.provider.RoleProviderService;
@@ -146,7 +147,7 @@ public class KalturaProvider extends AbstractEntityProvider implements RESTful {
         // GET
         String userId = view.getPathSegment(2);
 
-        securityService.securityCheck((String) params.get("auth_code"), userId);
+        securityService.securityCheck((String) params.get(Constants.AUTHORIZATION_CODE_KEY), userId);
 
         ActionReturn actionReturn = userProviderService.get(userId);
 
