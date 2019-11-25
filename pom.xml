@@ -20,6 +20,7 @@
     <module>admin-tool</module>
     <module>my-media-tool</module>
     <module>media-gallery-tool</module>
+      <module>conversion</module>
   </modules>
   
   <developers>
